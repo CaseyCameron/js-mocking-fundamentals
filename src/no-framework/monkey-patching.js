@@ -2,7 +2,7 @@ const assert = require('assert')
 const thumbWar = require('../thumb-war')
 const utils = require('../utils')
 
-// originalGetWinner servers as a cleanup function. Before every test, it resets.
+// originalGetWinner serves as a cleanup function. Before every test, it resets.
 // this is called monkey-patching
 const originalGetWinner = utils.getWinner
 // mock out a function to ensure getWinner always returns player 1
