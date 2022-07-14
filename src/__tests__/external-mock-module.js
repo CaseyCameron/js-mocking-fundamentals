@@ -1,6 +1,7 @@
 const thumbWar = require('../thumb-war')
 const utilsMock = require('../utils')
 
+// this will reference the __mocks__/utils.js
 jest.mock('../utils')
 
 test('returns winner', () => {
