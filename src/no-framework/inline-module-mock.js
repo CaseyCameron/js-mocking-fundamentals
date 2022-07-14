@@ -7,8 +7,11 @@ function fn(impl = () => {}) {
   return mockFn
 }
 
+//  mack an entry into the require cache so that when the mock is called it gets our require.cache
 const utilsPath = require.resolve('../utils')
+// initialize a require cache
 require.cache[utilsPath] = {
+  // it should resemble a module
   id: utilsPath,
   filename: utilsPath,
   loaded: true,
@@ -29,4 +32,5 @@ assert.deepStrictEqual(utils.getWinner.mock.calls, [
 ])
 
 // cleanup
+// delete the require cache utils path so modules that want to use utils still can
 delete require.cache[utilsPath]
